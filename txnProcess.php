@@ -26,6 +26,8 @@ if($insert){
     $paramList["orderId"] = $orderId ;
     $paramList["txnAmount"] = $txnAmount;
     $paramList["txnNote"] = $txnNote;
+    $paramList["cust_Email"] = $_POST['email'];  
+    $paramList["cust_Mobile"] = '1254878787';
     $paramList["callback_url"] = $callback_url;
     
     $checkSum = AhkWebCheckSum::generateSignature($paramList,$secret);
