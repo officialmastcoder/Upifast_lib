@@ -21,7 +21,7 @@ if(isset($_POST['status']) && $_POST['status']!=NULL){
     
     // Checksum verify.
     if($verifySignature){
-        $resdata = json_decode($paramList);
+        $resdata = json_decode($paramList,true);
         $orderid = $resdata['orderId'];
         if($resdata['txnStatus']=="TXN_SUCCESS"){
             $res = mysqli_query($connection,"SELECT * FROM upifast WHERE txn_id='$orderid' AND status='pending' LIMIT 1");
